@@ -1,0 +1,22 @@
+<?php
+/**
+ * @see PagarMe_Bowleto_Block_Success
+ */
+?>
+
+<?php if ($this->isBoletoPayment()): ?>
+    <p class="pagarme_boleto_info_boleto" style="text-align: center;font-size: 25px;">
+    <?php echo Mage::helper('pagarme_bowleto')->__('Click the followed link to print your boleto') ?> 
+        <a target="_blank" href="<?php echo $this->getBoletoUrl(); ?>">
+			<?php echo Mage::helper('pagarme_bowleto')->__('click here') ?>
+        	<center><img src="https://romagnollo.com.br/media/icone-boleto.png"></center>
+        </a>
+    </p>
+<?php endif; ?>
+
+
+
+
+
+
+

@@ -1,0 +1,75 @@
+tr.not-editable td {
+    color: #aaa !important;
+}
+
+tr.linked td {
+    color: green;
+}
+
+tr.unlinked td {
+    color: red;
+}
+
+tr.not-editable td.magento-code {
+    background-image: none;
+}
+
+td.magento-code {
+    background-image: url('../images/magento-logo.png');
+    background-repeat: no-repeat;
+    background-size: 23px 23px;
+    padding-left: 25px;
+}
+
+td.skyhub-code {
+
+}
+
+.skyhub-notification.notification-global {
+    background-image: url('../images/skyhub-logo.png');
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position-y: center;
+    background-position-x: 35px;
+    padding-left: 145px;
+}
+
+.notification-global .skyhub-logo-container {
+    float: left;
+    display: block;
+    padding: 5px;
+}
+
+.notification-global .skyhub-notification-container {
+    padding: 10px;
+}
+
+.skyhub-notification-container .unmapped-attribute-table {
+    padding: 10px;
+}
+
+.skyhub-notification-container .unmapped-attribute-table tr {
+
+}
+
+.skyhub-notification-container .unmapped-attribute-table td {
+
+}
+
+.skyhub-notification-container .unmapped-attribute-table td a {
+
+}
+
+.sendXml { 
+    border-width:1px;
+    border-style:solid;
+    border-color:#ed6502 #a04300 #a04300 #ed6502;
+    padding:1px 7px 2px 7px;
+    background:#f77c16;
+    color:#fff; font:bold 12px arial, helvetica, sans-serif;
+    cursor:pointer; text-align:center !important; white-space:nowrap;
+}
+
+.sendXml:hover {
+    background:#ffac47;
+}

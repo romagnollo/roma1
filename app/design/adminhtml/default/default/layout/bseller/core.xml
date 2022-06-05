@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * BSeller Platform
+ *
+ * Não edite este arquivo caso você pretenda atualizar este módulo futuramente
+ * para novas versões.
+ *
+ * @category  BSeller
+ * @package   BSeller_Core
+ *
+ * @copyright Copyright (c) 2016 B2W Digital - BSeller Platform. (http://www.bseller.com.br)
+ *
+ * @author    BSeller Core Team <dev@e-smart.com.br>
+ */
+-->
+<layout version="0.1.0">
+    <adminhtml_system_config_edit>
+        <reference name="head">
+            <action method="addCss">
+                <name>bseller/core/css/styles.css</name>
+            </action>
+        </reference>
+    </adminhtml_system_config_edit>
+</layout>

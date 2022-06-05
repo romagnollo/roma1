@@ -1,0 +1,44 @@
+<?php
+    $order = Mage::getModel('sales/order')->load(Mage::getSingleton('checkout/session')->getLastOrderId());
+    $pedido = $order->getId();
+    $pedidointeiro = Mage::getResourceModel('sales/order')->getIncrementId($pedido);
+    $order->loadByIncrementId($this->getOrderId());
+    $orderDiscount = $order->getDiscountAmount();
+    $totaldopedido = $order->getGrandTotal();
+    $formattedPrice = Mage::helper('core')->currency($totaldopedido, true, false);
+    $nomecliente = $order->getBillingAddress()->getFirstname();
+    $sobrenomecliente = $order->getBillingAddress()->getLastname();
+    $emailcliente = $order->getBillingAddress()->getEmail();
+    $method = $order->getPayment()->getMethod();
+    $allitems = $order->getAllVisibleItems();
+    $itemsCompra   = "";
+    
+    foreach ($allitems as $item) {
+        $itemsCompra .= "{'id':'" . strtolower($item->getSku()) . "','magento_id':'" . $item->getId() . "', 'sku':'" . $item->getSku() . "','name':'" . $item->getName() . "','category':'','price':'" . $item->getPrice(). "','quantity':'" . $item->getQtyOrdered() . "'},";
+    }
+
+
+?>
+<script>
+    var hintup_order = {
+        'order_id': '<?php echo $this->getOrderId(); ?>',
+        'email': '<?php echo $emailcliente ?>',
+        'products': [<?php echo $itemsCompra; ?>],
+        'order_total': '<?php echo $totaldopedido; ?>'
+    };
+</script>
+
+
+
+<?php
+
+$helper = Mage::helper('pagarme_modal');
+
+if ($this->isBoletoPayment()) {
+    echo  sprintf(
+        '<p class="pagarme_info_boleto">%s <a target="_blank" href="%s">%s</a></p>',
+        $helper->__('To print your boleto'),
+        $this->getBoletoUrl(),
+        $helper->__('click here')
+    );
+}

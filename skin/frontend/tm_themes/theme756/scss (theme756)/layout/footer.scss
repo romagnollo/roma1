@@ -1,0 +1,432 @@
+//
+// Magento
+//
+// NOTICE OF LICENSE
+//
+// This source file is subject to the Academic Free License (AFL 3.0)
+// that is bundled with this package in the file LICENSE_AFL.txt.
+// It is also available through the world-wide-web at this URL:
+// http://opensource.org/licenses/afl-3.0.php
+// If you did not receive a copy of the license and are unable to
+// obtain it through the world-wide-web, please send an email
+// to license@magento.com so we can send you a copy immediately.
+//
+// DISCLAIMER
+//
+// Do not edit or add to this file if you wish to upgrade Magento to newer
+// versions in the future. If you wish to customize Magento for your
+// needs please refer to http://www.magento.com for more information.
+//
+// @category    design
+// @package     rwd_default
+// @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+// @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+//
+/* ============================================ *
+ * Footer
+ * ============================================ */
+/* -------------------------------------------- *
+ * Footer
+ */
+@import "../includes";
+
+%footer-title {
+  font-family: $f-stack-default;
+  color: #fff;
+  font-size: $f-size-xl;
+  display: block;
+  padding: 0 0 13px;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.google-map {
+  margin-bottom: 75px;
+  position: relative;
+  .info-map {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    background-color: #fff;
+    width: 390px;
+    padding: 0 15px 60px;
+    margin-left: -185px;
+    z-index: 2;
+    font-size: 15px;
+    color: #555555;
+    line-height: 21px;
+    img {
+      display: inline-block;
+    }
+    p, img {
+      margin-bottom: 28px;
+    }
+  }
+}
+
+.footer-container {
+  background-color: #212121;
+  .block-subscribe {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    .input-box {
+      float: right;
+      width: 40.17%;
+      padding-top: 0;
+      position: relative;
+      .validation-advice {
+        position: absolute;
+        background: #fff;
+        border: solid 1px $c-module-border-light;
+        padding: 10px;
+      }
+      .actions .button {
+        background-color: #000000;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 13px;
+        line-height: 20px;
+        padding: 5px 25px;
+        height: 30px;
+        border: 0;
+        @include border-radius(15px);
+        &:after {
+          background-color: #fb8c00;
+        }
+      }
+    }
+    label {
+      float: left;
+      font-size: 15px;
+      text-transform: uppercase;
+      color: #383e41;
+      font-weight: bold;
+      line-height: 40px;
+      width: 55%;
+      text-align: center;
+      letter-spacing: 3px;
+    }
+  }
+  .block-subscribe .input-text {
+    width: 100%;
+    border: 0;
+    height: 40px;
+    background-color: #fff;
+    @include border-radius(20px);
+  }
+  .block-subscribe .block-content {
+    &:after {
+      @include clearfix;
+    }
+  }
+}
+
+.socials {
+  text-align: center;
+  margin-bottom: 70px;
+  h3 {
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  li {
+    display: inline-block;
+    padding: 0 20px;
+    a {
+      font-size: 30px;
+      color: #212121;
+    }
+    &:hover {
+      &:first-child a {
+        color: #6d4c41;
+      }
+      &:nth-child(2) a {
+        color: #e75854;
+      }
+      &:nth-child(3) a {
+        color: #29b6f6;
+      }
+      &:nth-child(4) a {
+        color: #44c0f3;
+      }
+      &:nth-child(5) a {
+        color: #547abb;
+      }
+    }
+  }
+}
+
+.footer,
+.footer button {
+  font-family: $f-stack-special;
+}
+
+.footer {
+  clear: both;
+  width: 100%;
+  padding-top: 53px;
+
+  @include bp(max-width, $bp-xsmall) {
+    padding-top: $trim-small;
+  }
+  .footer-cols-wrapper {
+    padding-bottom: 25px;
+    position: relative;
+    margin: 0 -15px;
+  }
+
+  .footer-col {
+    float: left;
+    width: 25%;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    h4,
+    .block-title strong {
+      @extend %footer-title;
+    }
+
+    &.last {
+      width: auto;
+      margin-right: 0;
+    }
+  }
+
+  .block-title {
+    border: 0;
+    padding: 0;
+    margin-bottom: 0;
+
+    strong {
+      @extend %footer-title;
+    }
+  }
+
+  .block-title,
+  address {
+    color: $c-text-primary;
+  }
+
+  .links,
+  .footer-col ul {
+    padding: 0;
+    li {
+      word-break: break-all;
+      line-height: 21px;
+      padding: 2px 0;
+    }
+    a {
+      color: #757575;
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+
+  .block {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .block-subscribe {
+    margin: 0 0 $trim 0;
+  }
+
+  .form-subscribe-header {
+    display: none;
+  }
+
+  /* ==================================back-top ================================================== */
+  #back-top {
+    position: fixed;
+    bottom: 40px;
+    z-index: 999;
+    right: 1%;
+    display: none;
+    width: 41px;
+    height: 41px;
+
+    span {
+      display: block;
+      text-align: center;
+      width: 45px;
+      height: 45px;
+      background-color: $accent-color-1;
+      color: #fff;
+      border-radius: 50%;
+      @include transition(all, 0.2s, ease-in-out);
+
+      &::before {
+        @include fa-icon;
+        content: "\f106";
+        font-size: 25px;
+        line-height: 40px;
+      }
+
+      &:hover {
+        background-color: darken($accent-color-1, 15%);
+      }
+    }
+  }
+
+  // ---------------------------------------------
+  .bugs,
+  address {
+    clear: both;
+  }
+
+  .bugs {
+    display: none;
+  }
+
+  .form-language,
+  .currency-switcher,
+  .store-switcher {
+    clear: both;
+    margin-bottom: $gap;
+  }
+
+  .form-language,
+  .currency-switcher {
+    display: none;
+  }
+
+  address {
+    color: #757575;
+    font-size: 14px;
+    line-height: 25px;
+    max-width: 180px;
+    margin-top: 25%;
+  }
+
+  @include bp(max-width, $bp-xlarge) {
+    $links-trim: percentage(30px / 960px);
+    $links-width: (100 - ($links-trim * 3)) / 5;
+    .footer-col {
+      width: $links-width;
+      padding-right: 0;
+      margin-right: $links-trim;
+    }
+    .footer-col:nth-child(4) {
+      margin-right: 0;
+    }
+    .block-subscribe {
+      clear: both;
+      float: none;
+      margin: 0 auto $trim auto;
+    }
+  }
+
+  @include bp(max-width, $bp-large) {
+    $links-trim: percentage(30px / 960px);
+    $links-width: (100 - ($links-trim * 3)) / 3;
+
+    .footer-col {
+      width: $links-width;
+      padding-right: 0;
+      margin-right: $links-trim;
+
+      &.last {
+        @include clearfix;
+        padding-top: 20px;
+        float: none;
+        width: 100%;
+      }
+
+    }
+
+    .footer-col:nth-child(4) {
+      margin-right: 0;
+    }
+
+    .block-subscribe {
+      clear: both;
+      float: none;
+      margin: 0 auto $trim auto;
+    }
+  }
+
+  @include bp(max-width, $bp-medium) {
+
+    .footer-col {
+      padding: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+      border-top: none;
+      float: none;
+      width: 100%;
+
+      &.last {
+        padding: 0;
+      }
+
+      h4,
+      .block-title strong {
+        @include accordionDtBase('right', $c-module-border);
+        display: block;
+        width: 100%;
+        cursor: pointer;
+
+        &.active {
+
+          @include accordionDtBase('down', $c-module-border);
+
+        }
+      }
+
+      &.last {
+        .block-subscribe {
+          .block-title strong {
+            border-bottom: solid 1px $c-module-border-light;
+          }
+
+          .block-content {
+            border: solid 1px $c-module-border-light;
+            border-top: none;
+          }
+        }
+      }
+
+    }
+
+    .footer-col-content,
+    .block-content {
+      padding: $box-spacing;
+      margin-top: 0;
+      border-width: 1px 1px 0 1px;
+      border-style: solid;
+      border-color: $c-module-border-light;
+    }
+
+    .block-subscribe {
+      margin-bottom: 0;
+    }
+
+  }
+
+}
+
+@include bp (max-width, $bp-medium) {
+  .footer address {
+    margin-top: 0;
+  }
+  .footer-container .block-subscribe label,
+  .footer-container .block-subscribe .input-box {
+    float: none;
+    width: 100%;
+  }
+  .google-map .info-map {
+    width: 270px;
+    margin-left: -135px;
+    img {
+      max-width: 100%
+    }
+  }
+  .footer .footer-cols-wrapper {
+    margin: 0;
+  }
+}

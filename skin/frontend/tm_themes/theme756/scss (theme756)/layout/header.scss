@@ -1,0 +1,526 @@
+//
+// Magento
+//
+// NOTICE OF LICENSE
+//
+// This source file is subject to the Academic Free License (AFL 3.0)
+// that is bundled with this package in the file LICENSE_AFL.txt.
+// It is also available through the world-wide-web at this URL:
+// http://opensource.org/licenses/afl-3.0.php
+// If you did not receive a copy of the license and are unable to
+// obtain it through the world-wide-web, please send an email
+// to license@magento.com so we can send you a copy immediately.
+//
+// DISCLAIMER
+//
+// Do not edit or add to this file if you wish to upgrade Magento to newer
+// versions in the future. If you wish to customize Magento for your
+// needs please refer to http://www.magento.com for more information.
+//
+// @category    design
+// @package     rwd_default
+// @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+// @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+//
+/* ============================================ *
+ * Header
+ * ============================================ */
+@import "../includes";
+
+@include bp(min-width, $bp-large + 1) {
+
+  .page-header-container {
+    position: relative;
+    text-align: center;
+    &::after {
+      @include clearfix;
+    }
+  }
+  .header-minicart.desktop {
+    position: absolute;
+    right: 0;
+    top: 8px;
+  }
+}
+
+.page-header {
+  //max-width: $max-container-width;
+  padding: 0;
+}
+
+.container {
+  position: relative;
+}
+
+/* ============================================ *
+ * Language switcher + welcome message
+ * ============================================ */
+
+.header-row-background {
+  margin-bottom: 27px;
+  background-color: $header-row-background;
+  color: $c-dark;
+  border-bottom: 1px solid #ebebeb;
+  a {
+    color: $header-row-color;
+
+    &:hover {
+      color: $c-dark;
+    }
+  }
+
+  .header-row {
+    max-width: $max-content-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &:after {
+    @include clearfix;
+  }
+
+  .form-language,
+  .currency-switcher {
+    float: left;
+    margin-right: $gap;
+  }
+
+  .welcome-msg {
+    float: right;
+    margin: 2px 0 0;
+    color: $accent-color-1;
+
+  }
+}
+
+@include bp(max-width, $bp-medium) {
+
+  .header-row-background {
+    display: block;
+
+    .welcome-msg {
+      float: none;
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+}
+
+/* ============================================ *
+ * Header switchers
+ * ============================================ */
+
+.header-switchers {
+  float: right;
+  border-left: 1px solid #ded6b4;
+  padding-left: 10%;
+  &:after {
+    @include clearfix;
+  }
+  .header-button {
+    float: right;
+    position: relative;
+    line-height: 20px;
+    > a {
+      display: block;
+      &:after {
+        @include custom-icon($font-family-icon, '\e071');
+        font-size: 28px;
+        line-height: 18px;
+        padding-left: 5px;
+        vertical-align: middle;
+      }
+    }
+    &.currency-list > a,
+    &.lang-list > a {
+      font-size: 14px;
+      line-height: 20px;
+      text-transform: capitalize;
+      text-align: center;
+      width: 100%;
+    }
+
+    ul {
+      display: none;
+      text-align: left;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      z-index: 999;
+      background: #fff;
+      width: 208px;
+      padding: 15px 0;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.14);
+      @include border-radius(30px);
+      cursor: default;
+      li {
+        float: none;
+        display: block;
+        line-height: 18px;
+        padding: 7px 18px;
+        cursor: default;
+        &:last-child {
+          border: 0;
+        }
+        a {
+          display: inline-block;
+          font-size: 14px;
+          line-height: 18px;
+          color: #726868;
+          min-height: 18px;
+          &:hover,&.selected {
+            text-decoration: none;
+            color: $accent-color-1;
+          }
+
+          .mobile-part {
+            display: none;
+          }
+        }
+      }
+    }
+    > a:hover,
+    &.active > a {
+      text-decoration: none;
+    }
+    &.full_mode {
+      width: auto;
+      cursor: pointer;
+      .header-button-title {
+        .label {
+          padding-right: 5px;
+        }
+        .current {
+          font-weight: normal;
+          color: #b8b8b8;
+          vertical-align: top;
+          line-height: 20px;
+          padding: 15px;
+          display: block;
+          &::after {
+            @include custom-icon($font-family-icon, '\e07b');
+            font-size: 16px;
+            line-height: 14px;
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+        &:hover {
+          .current {
+            color: $accent-color-1;
+          }
+        }
+      }
+      @include bp(max-width, $bp-medium) {
+        float: none;
+      }
+    }
+  }
+}
+
+/* ============================================ *
+ * Logo
+ * ============================================ */
+
+.logo {
+  display: inline-block;
+  min-width: 100px;
+  min-height: 44px;
+  margin: 0 auto 20px;
+  text-align: center;
+  vertical-align: top;
+  img {
+    max-width: 100%;
+  }
+
+  .small {
+    display: block;
+  }
+  .large {
+    display: none;
+  }
+}
+
+// ---------------------------------------------
+
+@include bp(max-width, $bp-large) {
+  .logo {
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+    img {
+      display: inline-block;
+    }
+  }
+
+}
+
+@include bp(min-width, $bp-medium + 1) {
+
+  .logo {
+
+    .small {
+      display: none;
+    }
+    .large {
+      display: block;
+    }
+  }
+
+}
+
+@include bp(max-width, $bp-medium) {
+  .logo {
+    max-width: 100%;
+  }
+}
+
+/* ============================================ *
+ * Skip Links
+ * ============================================ */
+
+.skip-container {
+  &.mobile {
+
+    background-color: $menu-background;
+
+    .skip-links {
+      position: relative;
+    }
+  }
+
+}
+
+.skip-links {
+  clear: both;
+  position: relative;
+
+  &:after {
+    @include clearfix;
+  }
+}
+
+// ---------------------------------------------
+
+@include bp(min-width, $bp-large + 1) {
+
+  .skip-links {
+    border: 0;
+    float: right;
+  }
+
+  .skip-container {
+
+    &.mobile {
+      display: none;
+    }
+    position: relative;
+    float: right;
+  }
+
+}
+
+/* -------------------------------------------- *
+ * Skip Link - Icon
+ */
+
+.skip-link .icon {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  vertical-align: middle;
+  font-size: 24px;
+}
+
+.skip-link.skip-nav .icon,
+.skip-link.skip-cart:not(.no-count) .icon {
+  margin-right: 3px;
+}
+
+@include bp(min-width, 500px) {
+
+  .skip-link .icon {
+    margin-right: 3px;
+  }
+
+}
+
+/* -------------------------------------------- *
+ * Skip Link - Label
+ */
+
+.skip-link .label {
+  display: none;
+}
+
+// ---------------------------------------------
+
+@include bp(min-width, 500px) {
+
+  .skip-link .label {
+    display: inline;
+  }
+
+}
+
+/* ============================================ *
+ * Skip Content
+ * ============================================ */
+
+$skiplLinkHeight: 50px;
+
+.skip-content {
+  display: none;
+
+  &.skip-active {
+    display: block;
+    position: absolute;
+    background: #fff;
+    top: 40px;
+    z-index: 1000;
+    padding: 15px;
+
+    @include boxshadow(0px, 0px, 5px, rgba(0, 0, 0, 0.35));
+
+    @include animation('skipLinks 0.25s linear');
+    @include keyframes('skipLinks') {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+  }
+}
+
+.main-menu {
+  .skip-content.skip-active {
+    position: relative;
+  }
+}
+
+/* ============================================ *
+ * Global Header Navigation
+ * ============================================ */
+
+@include bp(max-width, $bp-large) {
+
+  .header-search,
+  .header-minicart.desktop {
+    display: none;
+  }
+
+  .skip-link {
+    border-right: solid 1px #fff;
+    position: relative;
+    float: left;
+    width: 20%;
+    height: $skiplLinkHeight;
+    color: $menu-item-color;
+    line-height: $skiplLinkHeight - 2px;
+    text-align: center;
+
+    &.skip-nav {
+      border-left: solid 1px #fff;
+    }
+
+    .label {
+      color: $menu-item-color;
+    }
+  }
+
+  .skip-link:hover,
+  .skip-link.skip-active {
+    background: $menu-item-bg-act;
+    color: $menu-item-color-act;
+  }
+
+  .skip-link.skip-active span,
+  .skip-link:hover .label,
+  .skip-link:hover .icon, {
+    color: $menu-item-color-act;
+  }
+
+  .skip-content.skip-active {
+    //display: block;
+    background: #fff;
+    position: absolute;
+    top: $skiplLinkHeight;
+    width: 100%;
+    z-index: 999;
+    padding: 0 10px;
+    @include boxshadow(0px, 5px, 5px, rgba(0, 0, 0, 0.35));
+  }
+
+  // ---------------------------------------------
+  // Link
+
+  #header-account  li a,
+  #header-account .header-button .header-button-title {
+    padding: 3px 15px 4px 25px;
+    border-bottom: 1px solid $c-module-border;
+    text-align: left;
+    color: $c-text;
+    line-height: 30px;
+    span.current {
+      color: $c-text;
+      padding: 0;
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+
+  #header-account li:last-child a {
+    border-bottom: 0;
+  }
+
+  .no-touch #header-account a:hover,
+  .header-button .header-button-title:hover {
+    background-color: $c-module-background;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /*********/
+
+  .header-switchers {
+    display: none;
+  }
+
+  .header-button {
+    ul li a span {
+      display: none;
+
+      &.mobile-part {
+        display: inline-block;
+      }
+    }
+  }
+
+}
+
+a.skip-link {
+  text-decoration: none;
+}
+
+@include bp(min-width, 500px) {
+
+  .skip-link {
+    width: 25%;
+  }
+
+}
+
+.account-cart-wrapper {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+
+  @include bp(max-width, $bp-large) {
+    position: static;
+  }
+}

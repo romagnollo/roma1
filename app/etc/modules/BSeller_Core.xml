@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * BSeller Platform
+ *
+ * Não edite este arquivo caso você pretenda atualizar este módulo futuramente
+ * para novas versões.
+ *
+ * @category  BSeller
+ * @package   BSeller_Core
+ *
+ * @copyright Copyright (c) 2016 B2W Digital - BSeller Platform. (http://www.bseller.com.br)
+ *
+ * @author    BSeller Core Team <dev@e-smart.com.br>
+ */
+-->
+<config>
+    <modules>
+        <BSeller_Core>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Core/>
+            </depends>
+        </BSeller_Core>
+    </modules>
+</config>

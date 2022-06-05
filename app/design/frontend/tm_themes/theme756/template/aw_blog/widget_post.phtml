@@ -1,0 +1,29 @@
+<?php if ($posts = $this->getRecent()):  ?>
+	<div class="blog-bg" data-source-url="skin url='images/blog-bg.jpg">
+		<div class="widget-latest">
+			<!--<div class="widget-title center">
+				<h1><?php echo Mage::helper('blog')->__('Latest Posts');  ?></h1>
+			</div>-->
+			<ul class="blog-carousel">
+				<?php $i = 0; ?>
+				<?php foreach ($posts as $post): ?>
+						<li>
+							<div class="postWidget">
+								<div class="postImage">
+									<a href="<?php echo $post->getAddress(); ?>" class="aw-blog-read-more all-blog"><?php echo Mage::helper('blog')->__('Read more');  ?></a>
+									<a href="<?php echo $post->getAddress(); ?>" ><?php echo Mage::helper('cms')->getBlockTemplateProcessor()->filter($post->getExerptImage()); ?></a>
+								</div>
+								<div class="widget-latest-details">
+									<span class="widget-latest-data"><?php echo $currentDate = date('d.m.Y', strtotime($post->getCreatedTime())); ?></span>
+								</div>
+								<div class="widget-latest-title"><a href="<?php echo $post->getAddress(); ?>" ><?php echo $post->getTitle(); ?></a></div>
+							</div>
+						</li>
+					<?php $i++; ?>
+				<?php endforeach; ?>
+			</ul>
+		</div>
+	</div>
+<?php endif; ?>
+
+<?php // $tt = count($this->getRecent()); print_r($tt) ; ?>

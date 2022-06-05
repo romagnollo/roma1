@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets>
+    <new_products  type="catalog/product_widget_new" translate="name description" module="catalog">
+        <parameters>
+            <template>
+                <values>
+                    <all translate="label">
+                        <value>tm/allproducts/all_products_grid.phtml</value>
+                        <label>All Products Grid</label>
+                    </all>
+                </values>
+            </template>
+        </parameters>
+    </new_products>
+</widgets>

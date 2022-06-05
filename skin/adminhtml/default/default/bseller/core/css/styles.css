@@ -1,0 +1,21 @@
+/**
+ * BSeller Platform
+ *
+ * Não edite este arquivo caso você pretenda atualizar este módulo futuramente
+ * para novas versões.
+ *
+ * @category  BSeller
+ * @package   BSeller_Core
+ *
+ * @copyright Copyright (c) 2016 B2W Digital - BSeller Platform. (http://www.bseller.com.br)
+ *
+ * @author    BSeller Core Team <dev@e-smart.com.br>
+ */
+ul.config-tabs .admin-system-config-bseller-tab dt {
+    background-image    : url(../images/logo-bseller.png);
+    text-indent         : -9999px;
+    background-size     : 100px;
+    padding             : 13px;
+    position            : relative;
+    background-position : 10px center;
+}

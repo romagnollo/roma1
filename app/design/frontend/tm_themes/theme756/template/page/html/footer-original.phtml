@@ -1,0 +1,54 @@
+
+<!-- original footer 
+
+<?php if ($this->getChildHtml('bottom-page')): ?>
+<div class="bottom-page">
+	<?php echo $this->getChildHtml('bottom-page'); ?>
+</div>
+<?php endif; ?>
+<?php if ($this->getChildHtml('info-map')): ?>
+<div class="container google-map">
+	<?php echo $this->getChildHtml('tm_googlemap_embed'); ?>
+	<?php echo $this->getChildHtml('info-map'); ?>
+</div>
+<?php endif; ?>
+<?php echo $this->getChildHtml('socials'); ?>
+<div class="footer-container">
+	<?php echo $this->getChildHtml('footer.newsletter'); ?>
+	<div class="container">
+				<div class="footer">
+						<p id="back-top"><a href="#top"><span></span></a> </p>
+						<div class="footer-cols-wrapper">
+							<div class="footer-col">
+								<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer-block')->toHtml() ?>
+								<address><?php echo $this->getCopyright() ?></address>
+							</div>
+							<div class="footer-col">			
+								<h4><?php echo $this->__('Information') ?></h4>
+								<div class="footer-col-content">
+									<?php echo $this->getChildHtml('cms_footer_links') ?>
+									<?php echo $this->getChildHtml('footer_links') ?>
+								</div>
+							</div>
+							<?php echo $this->getChildHtml('footer_list') ?>
+							<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('facebook_fanbox')->toHtml() ?>
+							<div class="footer-col last">
+								<?php echo $this->getChildHtml('tm_facebook_like_footer') ?>
+								<?php echo $this->getChildHtml('tm_instagram_user') ?>
+								<?php echo $this->getChildHtml('paypal.partner.right.logo'); ?>
+							</div>
+							<div class="clear"></div>
+						</div>
+					<?php echo $this->getChildHtml('store_switcher') ?>
+					<?php $current_page = Mage::app()->getFrontController()->getRequest()->getRouteName(); 
+						if ($current_page == 'cms'):
+							echo '<!--{%FOOTER_LINK}-->';
+						endif;
+					?>
+				</div>
+
+	</div>
+</div>
+
+
+-->
