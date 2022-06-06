@@ -1,2 +1,9 @@
 magento/**
 magento/
+media/
+var/
+doc/
+dev/
+errors/
+lib/
+
