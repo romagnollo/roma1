@@ -24,7 +24,7 @@ html[xmlns] .slides {display: block;}
 .cwsSlider .loading { max-height:300px; overflow:hidden; }
 
 /**** Theme styles ****/
-.cwsSlider { position:relative; margin:0 auto -11px; }
+.cwsSlider { position:relative; margin:0 auto -11px; top: -10px; }
 .page-products .cwsSlider, .catalog-product-view .cwsSlider, .cms-page-view .cwsSlider { margin:0 auto 55px; }
 
 .cwsRwdSlider { position:relative; }
