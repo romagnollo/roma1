@@ -9,7 +9,7 @@
 
 .block-layered-nav .actions a{font-size:14px;text-transform:none;padding:6px 15px}
 
-.products-grid .availability.out-of-stock span,.products-list .availability.out-of-stock span,.products-grid .button.btn-cart,.products-grid .button.btn-details,.products-list .button.btn-cart,.products-list .button.btn-details{background-color:#27a215}
+.products-grid .availability.out-of-stock span,.products-list .availability.out-of-stock span,.products-grid .button.btn-cart,.products-grid .button.btn-details,.products-list .button.btn-cart,.products-list .button.btn-details{background-color:#ffffff}
 
 .products-grid .availability.out-of-stock span::after,.products-list .availability.out-of-stock span::after,.products-grid .button.btn-cart::after,.products-grid .button.btn-details::after,.products-list .button.btn-cart::after,.products-list .button.btn-details::after{background:#0b4602}
 
