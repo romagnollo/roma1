@@ -232,7 +232,7 @@
 								<?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
 									<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
 
-									<p><span><img src="https://romagnollo.com.br/media/whats.png" width="20" height="20" ></span>Comprar pelo WhatsApp</p>
+									<p><img src="https://romagnollo.com.br/media/whats.png" width="20" height="20">Comprar pelo WhatsApp</p>
 
 								<?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
 									<a title="<?php echo $this->__('View Details') ?>" class="button btn-details" href="<?php echo $_product->getProductUrl() ?>"><span><span><?php echo $this->__('View Details') ?></span></span></a>
