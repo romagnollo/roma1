@@ -1,10 +1,10 @@
-﻿.cart-totals .checkout-types .btn-checkout{font-size:21px;padding:12px 16px}
+﻿.cart-totals .checkout-types .btn-checkout{font-size:27px;padding:12px 16px}
 
 
 @media only screen and (max-width: 991px){.cart-totals .checkout-types .btn-checkout{padding:7px 12px}}
 
 
-.cart-totals .checkout-types .btn-checkout{background-color:#27a215}
+.cart-totals .checkout-types .btn-checkout{background-color:#009b06;    color: #fff;}
 
 
 .cart-totals .checkout-types .btn-checkout::after{background:#27a215}
