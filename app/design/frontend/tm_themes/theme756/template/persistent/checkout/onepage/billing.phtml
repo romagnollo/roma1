@@ -253,18 +253,27 @@
 </script>
 
 
+   <script>
+    
+    function limpa_formulário_cep() {
+            //Limpa valores do formulário de cep.
+            document.getElementById('billing:street1').value=("");
+            document.getElementById('billing:street4').value=("");
+            document.getElementById('billing:city').value=("");
+            document.getElementById('uf').value=("");
+            document.getElementById('ibge').value=("");
+    }
 
-<script type="text/javascript">
-    jQuery('input[name="billing[postcode]"]').focusout(function(){
-        var cep = jQuery(this).val();
-        jQuery.ajax({
-            url: 'https://viacep.com.br/ws/'+cep+'/json/unicode/',
-            dataType: 'json',
-            success: function(resposta){
-                jQuery('input[name="billing[street][]"]').eq(0).val(resposta.logradouro);
-                jQuery('input[name="billing[street][]"]').eq(2).val(resposta.complemento);
-                jQuery('input[name="billing[street][]"]').eq(3).val(resposta.bairro);
-                jQuery('input[name="billing[city]"]').val(resposta.localidade);
+    function meu_callback(conteudo) {
+        if (!("erro" in conteudo)) {
+            //Atualiza os campos com os valores.
+            document.getElementById('billing:street1').value=(conteudo.logradouro);
+            document.getElementById('billing:street4').value=(conteudo.bairro);
+            document.getElementById('billing:city').value=(conteudo.localidade);
+            document.getElementById('billing:region_id').value=(conteudo.uf);
+            document.getElementById('ibge').value=(conteudo.ibge);
+        } //end if.
+
 
 
 
@@ -303,9 +312,60 @@
 
                 jQuery('select[name="billing[region_id]"]').val(resposta.uf);
 
-                jQuery('input[name="billing[street][]"]').eq(1).focus();
-            }
-        });
-    });
 
-</script>
+
+
+        else {
+            //CEP não Encontrado.
+            limpa_formulário_cep();
+            alert("CEP não encontrado.");
+        }
+    }
+        
+    function pesquisacep(valor) {
+
+        //Nova variável "cep" somente com dígitos.
+        var cep = valor.replace(/\D/g, '');
+
+        //Verifica se campo cep possui valor informado.
+        if (cep != "") {
+
+            //Expressão regular para validar o CEP.
+            var validacep = /^[0-9]{8}$/;
+
+            //Valida o formato do CEP.
+            if(validacep.test(cep)) {
+
+                //Preenche os campos com "..." enquanto consulta webservice.
+                document.getElementById('billing:street1').value="...";
+                document.getElementById('billing:street4').value="...";
+                document.getElementById('billing:city').value="...";
+                document.getElementById('billing:region_id').value="...";
+                document.getElementById('ibge').value="...";
+
+                //Cria um elemento javascript.
+                var script = document.createElement('script');
+
+                //Sincroniza com o callback.
+                script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+
+                //Insere script no documento e carrega o conteúdo.
+                document.body.appendChild(script);
+
+            } //end if.
+            else {
+                //cep é inválido.
+                limpa_formulário_cep();
+                alert("Formato de CEP inválido.");
+            }
+        } //end if.
+        else {
+            //cep sem valor, limpa formulário.
+            limpa_formulário_cep();
+        }
+    };
+
+    </script>
+
+
+
