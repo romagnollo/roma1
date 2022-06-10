@@ -85,6 +85,15 @@
 
 </IfModule>
 
+
+<IfModule mod_php5.c>
+php_value max_input_vars 10000
+</IfModule>
+
+
+
+
+
 <IfModule mod_rewrite.c>
 
 ############################################
