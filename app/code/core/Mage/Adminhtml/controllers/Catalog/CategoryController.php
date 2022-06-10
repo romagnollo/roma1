@@ -314,14 +314,34 @@ class Mage_Adminhtml_Catalog_CategoryController extends Mage_Adminhtml_Controlle
                 $category->setData('save_rewrites_history', (bool)$data['general']['url_key_create_redirect']);
             }
 
-            $category->setAttributeSetId($category->getDefaultAttributeSetId());
+
 
             if (isset($data['category_products']) &&
-                !$category->getProductsReadonly()
-            ) {
-                $products = Mage::helper('core/string')->parseQueryStr($data['category_products']);
-                $category->setPostedProducts($products);
-            }
+!$category->getProductsReadonly()) {
+$products = array();
+
+$cat_products_split = explode('&', $data['category_products']);
+
+foreach($cat_products_split as $row) {
+$arr = array();
+
+// This will always work.
+parse_str($row, $arr);
+
+list($k, $v) = each($arr);
+if (!empty($k) && !empty($v)) {
+$products[$k] = $v;
+}
+}
+
+if (!empty($products)) {
+$category->setPostedProducts($products);
+}
+}
+
+
+
+
 
             Mage::dispatchEvent('catalog_category_prepare_save', array(
                 'category' => $category,
