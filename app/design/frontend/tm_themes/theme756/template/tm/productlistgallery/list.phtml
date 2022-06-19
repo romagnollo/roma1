@@ -173,21 +173,15 @@
 							if($gallery_helper->getGridData('active')):
 							 ?>                
 							<ul class="product-thumbs">
-								<!--<?php 
-								$count_thumbs = 1;
-								foreach ($_product->getMediaGalleryImages() as $image):
-									if($count_thumbs <= 3):
-								?>-->
+
 									<li class="product-thumb">
 										<a href="<?php echo $this->helper('catalog/image')->init($_product, 'small_image', $image->getFile())->resize($gallery_helper->getGridData('image_width')); ?>">
 										   <img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail', $image->getFile())->resize($gallery_helper->getGridData('thumb_size_w'), $gallery_helper->getGridData('thumb_size_h')); ?>" width="<?php echo $gallery_helper->getGridData('thumb_size_w'); ?>" height="<?php echo $gallery_helper->getGridData('thumb_size_h'); ?>" alt="" />
 										</a>
 									</li>
-									<?php endif ?>
-								<?php $count_thumbs++; ?>
-								<?php endforeach ?>
+
 							</ul>
-						<?php endif ?>
+
 					</div> 
 
 					<div class="product-details">
